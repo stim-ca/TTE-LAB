@@ -14,7 +14,7 @@ Function New-Splat {
 
         $Parameters = (get-command -name $Name).parameters | Out-GridView -PassThru | Select-Object Name
         
-        $output = "`$$($Name.Replace('-', ''))_Properties = {`n"
+        $output = "`$$($Name.Replace('-', ''))_Properties = @{`n"
 
         foreach ($parameter in $parameters) {
             $output += "`t$($parameter.Name) = `"`"`n"
